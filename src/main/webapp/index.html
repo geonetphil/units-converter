@@ -4,7 +4,84 @@
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
+
+
     <body>
-        <h1>Goodbye cruel World!</h1>
+        <h1>Unit converter</h1>
+        <div style="width: 500px;">
+            <a>Input value: </a>
+            <input type="text" id="v1" onchange="updateV2();" value="1.0" />
+            <a>Input order: </a>
+            <select id="o1" name="orderInPicker" onchange="updateV2();">
+                <option value="-9">nano</option>
+                <option value="-3">milli</option>
+                <option value="-2">centi</option>
+                <option value="0">none</option>
+                <option value="3">kilo</option>
+            </select>
+            <a>Input unit: </a>
+            <select id="u1" name="unitInPicker" onchange="updateV2();">
+                <option value="3.2808399">feet</option>
+                <option value="39.3700787">inches</option>
+                <option value="1.0">meters</option>
+                <option value="1.0936133">yards</option>
+            </select>
+        </div>
+        <div style="width: 500px;">
+
+
+            <a>Output order: </a>
+            <select id="o2" name="orderOutPicker" onchange="updateV2();">
+                <option value="-9">nano</option>
+                <option value="-3">milli</option>
+                <option value="-2">centi</option>
+                <option value="0">none</option>
+                <option value="3">kilo</option>
+            </select>
+
+            <a>Output unit: </a>
+            <select id="u2" name="unitOutPicker" onchange="updateV2();">
+                <option value="3.2808399">feet</option>
+                <option value="39.3700787">inches</option>
+                <option value="1.0">meters</option>
+                <option value="1.0936133">yards</option>
+            </select>
+
+
+
+        </div>
+        <div>
+
+            <a>Output value: </a>
+            <a id="v2"></a>
+        </div>
+
+
+        <script>
+            function updateV2() {
+                //alert("Starting conversion...");
+                //This assigns the values of each of the elements in the equation from the elements on the page
+                var v1 = Number(document.getElementById("v1").value);
+
+                var u1 = Number(document.getElementById("u1").value);
+                var u2 = Number(document.getElementById("u2").value);
+                var o1 = Number(document.getElementById("o1").value);
+                var o2 = Number(document.getElementById("o2").value);
+                
+                var v2 = 0.0;
+                //Correct the code below to calculate v2 here 
+
+                v2 = u1 * Math.pow(10, o1);
+
+                //This writes the value to v2
+
+                document.getElementById("v2").innerHTML = v2;
+
+
+            }
+
+
+        </script>
+
     </body>
 </html>
